@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import NarrowBanner from "@/components/NarrowBanner";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
     return (
@@ -14,6 +15,7 @@ export default function HomePage() {
         <div className='pt-20'>
           <h1>欢迎来到Blog</h1>
         </div>
+        <Footer />
       </main>
     );
   }

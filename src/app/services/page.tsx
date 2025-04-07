@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import NarrowBanner from "@/components/NarrowBanner";
 import ServiceCard from "@/components/services/ServiceCard";
 import ServiceProcess from "@/components/services/ServiceProcess";
+import TestimonialCarousel from "@/components/services/TestimonialCarousel";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
     return (
@@ -15,6 +17,8 @@ export default function HomePage() {
         />
         <ServiceCard />
         <ServiceProcess />
+        <TestimonialCarousel />
+        <Footer />
       </main>
     );
 }

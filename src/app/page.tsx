@@ -11,12 +11,13 @@ import CareersSection from '../components/CareersSection';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import CircularCarousel from '../components/landing/CircularCarousel';
+import GetQuotesSection from '@/components/landing/GetQuoteSection';
 
 export default function Home() {
   return (
     <div>
       <Navbar />
-      <main>
+      <div>
         <HeroSection />
         <ServicesCardSection />
         <ProblemsSection />
@@ -27,13 +28,14 @@ export default function Home() {
           buttonLink="/showcase"
         /> */}
         <CircularCarousel />
+        <GetQuotesSection />
         <WhyUsSection />
         <ClientsSection />
         <ApproachSection />
         <DifferenceSection />
         <ContactSection />
         <CareersSection />
-      </main>
+      </div>
       <Footer />
     </div>
   );

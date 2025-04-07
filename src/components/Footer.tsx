@@ -1,134 +1,117 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'; 
+import { usePathname } from 'next/navigation';
 
-export default function Footer() {
-  const locations = [
-    {
-      country: "Chile",
-      city: "Santiago de Chile",
-      address: "Manquehue Sur 520 oficina 205",
-      phone: "+56 2 2979 6853"
-    },
-    {
-      country: "Argentina",
-      city: "Buenos Aires",
-      address: "Alicia M. de Justo 1120 A306",
-      phone: "+54 11 5279 4784"
-    },
-    {
-      country: "Argentina",
-      city: "Rosario",
-      address: "Zeballos 1387 PA",
-      phone: "+54 341 4218726"
-    },
-    {
-      country: "España",
-      city: "Madrid",
-      address: "C/ Doctor Castelo, 44",
-      phone: "+34 910 888205"
-    }
-  ];
-
-  const socialLinks = [
-    {
-      name: "YouTube",
-      url: "https://www.youtube.com/channel/UC0Xd74pxZubHfj55bMjWeJQ",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
-        </svg>
-      )
-    },
-    {
-      name: "Instagram",
-      url: "https://www.instagram.com/techbianalytics/",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-        </svg>
-      )
-    },
-    {
-      name: "LinkedIn",
-      url: "https://ar.linkedin.com/company/techbi",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-        </svg>
-      )
-    },
-    {
-      name: "Twitter",
-      url: "https://mobile.twitter.com/tech_bi",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-        </svg>
-      )
-    },
-    {
-      name: "Facebook",
-      url: "https://es-la.facebook.com/TechBI.SocialNet/",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-        </svg>
-      )
-    }
+const Footer = () => {
+  const pathname = usePathname();
+  
+  const linkClass = (path: string) => {
+    return pathname === path 
+      ? "text-yellow hover:text-darkyellow border-b border-yellow hover:border-darkyellow pb-[2px] mb-[2px] transition-colors" 
+      : "text-white hover:text-yellow transition-colors";
+  };
+  
+  const socialMediaLinks = [
+    { id: 1, icon: <FaTwitter />, link: 'https://twitter.com' },
+    { id: 2, icon: <FaFacebookF />, link: 'https://facebook.com' },
+    { id: 3, icon: <FaInstagram />, link: 'https://instagram.com' },
+    { id: 4, icon: <FaLinkedinIn />, link: 'https://linkedin.com' },
   ];
 
   return (
-    <footer className="bg-black pt-16 pb-8">
-      <div className="container-custom mb-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {locations.map((location, index) => (
-            <div key={`location-${index}`} className="text-gray-300">
-              <p className="font-bold mb-2">{location.country} - {location.city}</p>
-              <p className="mb-1">{location.address}</p>
-              <p>{location.phone}</p>
-            </div>
+    <footer
+      className="bg-cover bg-center text-white py-16 relative"
+      style={{
+        backgroundImage: `url('https://images.unsplash.com/photo-1585412168334-8fa91429cc64?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`, 
+      }}
+    >
+      
+      {/* Mask Layer */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40 z-10"></div>
+
+      <div className="relative z-20 container mx-auto px-6 sm:px-8 md:px-10 lg:px-20">
+        {/* Logo and Description */}
+        <div className="flex flex-col md:flex-row justify-center items-center text-center mb-12">
+          <div className="relative h-14 md:h-20 w-40 md:w-60 mb-4 md:mb-0 md:mr-6">
+            <Image 
+              src="/images/logo.png" 
+              alt="QX Tech logo" 
+              fill
+              style={{ objectFit: 'contain' }}
+            />
+          </div>
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl">
+            Connecting Technology With Business Success
+          </h2>
+        </div>
+
+        {/* Navigation Links - Only the ones you specified */}
+        <div className="flex justify-center mb-10">
+          <nav className="flex flex-col md:flex-row items-center md:space-x-8 text-white">
+            <Link href="/" className={linkClass("/")}>
+              Home
+            </Link>
+            <Link href="/services" className={linkClass("/services")}>
+              Services
+            </Link>
+            <Link href="/showcase" className={linkClass("/showcase")}>
+              Showcase
+            </Link>
+            <Link href="/blog" className={linkClass("/blog")}>
+              Blog
+            </Link>
+            <Link href="/contact" className={linkClass("/contact")}>
+              About Us
+            </Link>
+            <Link href="/?redirect=off" className={linkClass("/?redirect=off")}>
+              EN
+            </Link>
+          </nav>
+        </div>
+
+        {/* Contact Info */}
+        <div className="text-center mt-8">
+          <p className="mb-2">547 / Level 5, 15 Moore Street, Canberra ACT 2601</p>
+          <p className="mb-4">
+            <a href="mailto:info@qixin.com.au" className="hover:text-blue-300 transition-colors">
+              info@qixin.com.au
+            </a>
+          </p>
+          <p className="mb-2">
+            <a href="tel:+61484411111" className="hover:text-blue-300 transition-colors">
+              +61 484411111
+            </a>
+          </p>
+        </div>
+
+        {/* Social Media */}
+        <div className="flex justify-center space-x-6 mt-10">
+          {socialMediaLinks.map((social) => (
+            <a
+              key={social.id}
+              href={social.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${social.link} in a new tab`} 
+              className="text-lg md:text-2xl hover:text-blue-300 transition-colors"
+            >
+              {social.icon}
+            </a>
           ))}
         </div>
 
-        <div className="mt-12 border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-6 md:mb-0">
-              <Image
-                src="https://ext.same-assets.com/935318559/316568000.svg"
-                alt="TechBI Logo"
-                width={120}
-                height={40}
-                className="h-8 w-auto"
-              />
-              <p className="text-sm text-gray-500 mt-2">
-                TechBI S.R.L. CUIT: 30-71143860-9
-              </p>
-            </div>
-
-            <div className="flex space-x-4">
-              {socialLinks.map((link, index) => (
-                <Link
-                  key={`social-${index}`}
-                  href={link.url}
-                  className="text-gray-400 hover:text-white transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={link.name}
-                >
-                  {link.icon}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-8 text-center">
-            <Link href="/privacy_policy.html" className="text-gray-400 hover:text-white transition-colors">
-              Política de privacidad
-            </Link>
-          </div>
+        {/* Copyright */}
+        <div className="text-center mt-10">
+          <p className="text-sm sm:text-base">
+            &copy; {new Date().getFullYear()} QX Tech. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

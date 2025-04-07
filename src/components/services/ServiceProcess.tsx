@@ -38,7 +38,7 @@ const ServiceProcess = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           {/* Left text content */}
-          <div className="w-full lg:w-2/3 mb-10 md:mb-0 lg:mr-20">
+          <div className="w-full lg:w-2/3 mb-10 lg:mb-0 lg:mr-20">
             <SectionTitle title="Our Delivery Approach" />
             <p className="text-base text-black mb-12">
                 With just four steps, we can quickly fulfill your requirements, saving you time and reducing your enterprise digitalization costs.
@@ -47,7 +47,7 @@ const ServiceProcess = () => {
             {/* Process steps */}
             <div className="relative">
               {/* Progress line */}
-              <div className="hidden md:block absolute top-[30px] left-[60px] right-10 h-[2px] bg-gray-200 z-0"></div>
+              {/* <div className="hidden md:block absolute top-[30px] left-[60px] right-10 h-[2px] bg-gray-200 z-0"></div> */}
               
               <div className="flex flex-col sm:flex-row justify-between gap-6 relative">
               {steps.map((step) => (

@@ -53,10 +53,10 @@ const PortfolioGallery = ({defaultView = 'grid' }) => {
               className={`hidden sm:block p-2 transition-colors ${viewType === 'squares' ? 'bg-lightyellow' : 'hover:bg-gray-100'}`}
               aria-label="Gallery view"
             >
-            <div className="h-5 w-5 flex items-center justify-between">
-              <div className="h-2 w-2 rounded-full border border-gray-600 bg-transparent"></div>
-              <div className="h-2 w-2 rounded-full border border-gray-600 bg-transparent"></div>
-            </div>
+              <div className="h-5 w-5 flex items-center justify-between">
+                <div className="h-2 w-2 rounded-full border border-gray-600 bg-transparent"></div>
+                <div className="h-2 w-2 rounded-full border border-gray-600 bg-transparent"></div>
+              </div>
             </button>
             
             {/* List view */}

@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import NarrowBanner from "@/components/NarrowBanner";
 import PortfolioGallery from "@/components/showcase/PortfolioGallery";
 import { showcaseData } from "@/components/showcase/ShowcaseData";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
     return (
@@ -18,6 +19,7 @@ export default function HomePage() {
           defaultView="grid"
         />
         
+        <Footer />
       </main>
     );
   }
