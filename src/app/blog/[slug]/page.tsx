@@ -1,8 +1,8 @@
 // src/pages/blog/[slug].tsx
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import NarrowBanner from "@/components/NarrowBanner";
+import Navbar from "@/components/common/Navbar";
+import Footer from "@/components/common/Footer";
+import NarrowBanner from "@/components/common/NarrowBanner";
 import Image from 'next/image';
 import Link from 'next/link';
 import BlogContentCn from "@/components/blog/BlogContentCn";
