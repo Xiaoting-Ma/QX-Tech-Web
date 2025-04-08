@@ -1,0 +1,56 @@
+export const blogs= {
+  "boldText": "newest",
+  "normalText": "blogs",
+  "subtitle": "see our latest blogs",
+  "learnMore": "view details →",
+  "goBack": "← return to blog list",
+  "blogNotFound": "Sorry, Blog not found",
+};
+
+export const blogDatas= [
+    {
+      "id": "1",
+      "title": 'Next.js vs React',
+      "titleDetail": 'Next.js vs React：choosing the right framework for your project',
+      "date": '10th Feb 2025',
+      "author": 'Qixin team',
+      "slug": "1",
+      "imageUrl": 'https://images.unsplash.com/photo-1687603921109-46401b201195?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fFJlYWN0fGVufDB8fDB8fHww',
+    },
+    {
+      "id": "2",
+      "title": 'SEO Optimization',
+      "titleDetail": 'SEO optimization: improving your website’s visibility',
+      "date": '15th Feb 2025',
+      "author": 'Qixin team',
+      "slug": '2',
+      "imageUrl": 'https://intersmart.ae/wp-content/uploads/2024/08/SEO-for-Small-Business.webp',
+    },
+    {
+      "id": "3",
+      "title": 'SQL vs NoSQL',
+      "titleDetail": 'SQL vs NoSQL：choosing the right database for your application',
+      "date": '18th Feb 2025',
+      "author": 'Qixin team',
+      "slug": '3',
+      "imageUrl": 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*flO2txrxPEFX6bBX5TxO0w.jpeg',
+    },
+    {
+      "id": "4",
+      "title": 'Cloud Computing',
+      "titleDetail": 'AWS vs Azure vs Google Cloud：choosing the right cloud provider',
+      "date": '21st Feb 2025',
+      "author": 'Qixin team',
+      "slug": '4',
+      "imageUrl": 'https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ftr15aup9pz7k6n3tlm0q.png',
+    },
+    {
+      "id": "5",
+      "title": 'Microservices', 
+      "titleDetail": 'Microservices: building scalable and maintainable applications',
+      "date": '1st Mar 2025',
+      "author": 'Qixin team',
+      "slug": '5',
+      "imageUrl": 'https://www.netsolutions.com/wp-content/uploads/2024/09/title-microservices.webp',
+    },
+  ]
