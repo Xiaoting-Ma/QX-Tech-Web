@@ -121,7 +121,7 @@ export default function Navbar() {
             className="block"
             onClick={() => setIsMenuOpen(false)}
           >
-            Collaboration
+            Blog
           </Link>
           <Link
             href="/contact"

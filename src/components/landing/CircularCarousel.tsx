@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/common/TitleSection";
 import ContactButton from "@/components/common/ViewAllButton";
-import { BiGame } from "react-icons/bi";
 
 // Sample images - replace with your actual images
 const images = [
