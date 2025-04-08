@@ -1,6 +1,7 @@
 import Navbar from "@/components/common/Navbar";
 import NarrowBanner from "@/components/common/NarrowBanner";
 import Footer from "@/components/common/Footer";
+import BlogGallery from "@/components/blog/BlogGallery";
 
 export default function HomePage() {
     return (
@@ -12,9 +13,9 @@ export default function HomePage() {
           content="QX Tech specializes in creating visually stunning and user-friendly websites tailored to your business needs. From custom designs to seamless functionality, we ensure your online presence is both engaging and efficient, offering responsive designs."
           height="350px"
         />
-        <div className='pt-20'>
-          <h1>欢迎来到Blog</h1>
-        </div>
+        <BlogGallery
+          defaultView="grid"
+        />
         <Footer />
       </main>
     );
