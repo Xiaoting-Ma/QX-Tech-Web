@@ -1,7 +1,8 @@
-import Navbar from "@/components/Navbar";
-import Timeline from "@/components/Timeline";
-import NarrowBanner from "@/components/NarrowBanner";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/common/Navbar";
+import Timeline from "@/components/contact/Timeline";
+import NarrowBanner from "@/components/common/NarrowBanner";
+import Footer from "@/components/common/Footer";
+import TeamSection from "@/components/contact/TeamSection";
 
 export default function HomePage() {
     return (
@@ -16,6 +17,7 @@ export default function HomePage() {
         <div className='pt-20'>
           <Timeline />
         </div>
+        <TeamSection />
         <Footer />
       </main>
     );

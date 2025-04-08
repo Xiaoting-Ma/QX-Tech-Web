@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { showcaseData } from '../showcase/ShowcaseData';
-import ContactButton from '../ViewAllButton'; 
+import ContactButton from '../common/ViewAllButton'; 
 import SectionTitle from '../common/TitleSection';
 
 /**
