@@ -31,8 +31,8 @@ const apercuPro = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "TechBI",
-  description: "Potenciando el valor de tus datos",
+  title: "QX Tech",
+  description: "QX Tech is a leading IT company specializing in web development, SEO, and IT solutions.",
 };
 
 export default function RootLayout({
@@ -41,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${apercuPro.variable}`}>
+    <html lang="en" className={`${apercuPro.variable}`}>
       <ClientBody>{children}</ClientBody>
     </html>
   );

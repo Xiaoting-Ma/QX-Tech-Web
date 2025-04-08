@@ -1,8 +1,8 @@
-import Navbar from "@/components/Navbar";
-import NarrowBanner from "@/components/NarrowBanner";
+import Navbar from "@/components/common/Navbar";
+import NarrowBanner from "@/components/common/NarrowBanner";
 import PortfolioGallery from "@/components/showcase/PortfolioGallery";
 import { showcaseData } from "@/components/showcase/ShowcaseData";
-import Footer from "@/components/Footer";
+import Footer from "@/components/common/Footer";
 
 export default function HomePage() {
     return (

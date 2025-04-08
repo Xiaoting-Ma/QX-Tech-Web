@@ -1,6 +1,6 @@
-import Navbar from "@/components/Navbar";
-import NarrowBanner from "@/components/NarrowBanner";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/common/Navbar";
+import NarrowBanner from "@/components/common/NarrowBanner";
+import Footer from "@/components/common/Footer";
 
 export default function HomePage() {
     return (

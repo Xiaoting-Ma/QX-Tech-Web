@@ -1,9 +1,9 @@
-import Navbar from "@/components/Navbar";
-import NarrowBanner from "@/components/NarrowBanner";
+import Navbar from "@/components/common/Navbar";
+import NarrowBanner from "@/components/common/NarrowBanner";
 import ServiceCard from "@/components/services/ServiceCard";
 import ServiceProcess from "@/components/services/ServiceProcess";
 import TestimonialCarousel from "@/components/services/TestimonialCarousel";
-import Footer from "@/components/Footer";
+import Footer from "@/components/common/Footer";
 
 export default function HomePage() {
     return (

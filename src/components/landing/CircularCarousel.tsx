@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/common/TitleSection";
-import ContactButton from "@/components/ViewAllButton";
+import ContactButton from "@/components/common/ViewAllButton";
+import { BiGame } from "react-icons/bi";
 
 // Sample images - replace with your actual images
 const images = [
@@ -35,7 +36,7 @@ const EllipticalCarousel = () => {
     <div className="mt-20">
       <SectionTitle title="OUR SHOWCASE" />
       <div 
-        className="relative w-full h-[600px] flex items-center justify-center mb-36"
+        className="relative z-10 w-full h-[600px] flex items-center justify-center mb-36 mt-10 pointer-events-auto"
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
@@ -52,56 +53,56 @@ const EllipticalCarousel = () => {
           if (i === (index) % images.length) {
             // Top position
             x = 0;
-            y = -200; // Reduced vertical distance
+            y = -160; // Reduced vertical distance
             scale = 0.9;
             opacity = 0.3;
             zIndex = 2;
           } else if (i === (index + 1) % images.length) {
             // Top-right position
             x = 300; // Increased horizontal distance
-            y = -170; // Reduced vertical distance
+            y = -130; // Reduced vertical distance
             scale = 0.85;
             opacity = 0.3;
             zIndex = 2;
           } else if (i === (index + 2) % images.length) {
             // Right position
             x = 500; // Increased horizontal distance significantly
-            y = -20; // Closer to center vertically
+            y = -50; // Closer to center vertically
             scale = 0.85;
             opacity = 0.3;
             zIndex = 2;
           } else if (i === (index + 3) % images.length) {
             // Bottom-right position
             x = 300; // Increased horizontal distance
-            y = 110; // Reduced vertical distance
-            scale = 0.85;
-            opacity = 0.3;
-            zIndex = 2;
+            y = 60; // Reduced vertical distance
+            scale = 1;
+            opacity = 0.6;
+            zIndex = 5;
           } else if (i === (index + 4) % images.length) {
             // Bottom position - the focused/active image
             x = 0;
-            y = 120; 
+            y = 90; 
             scale = 1.5; 
             opacity = 1;
             zIndex = 10;
           } else if (i === (index + 5) % images.length) {
             // Bottom-left position
             x = -300; // Increased horizontal distance
-            y = 110; // Reduced vertical distance
-            scale = 0.85;
-            opacity = 0.3;
-            zIndex = 2;
+            y = 60; // Reduced vertical distance
+            scale = 1;
+            opacity = 0.6;
+            zIndex = 5;
           } else if (i === (index + 6) % images.length) {
             // Left position
             x = -500; // Increased horizontal distance significantly
-            y = -20; // Closer to center vertically
+            y = -50; // Closer to center vertically
             scale = 0.85;
             opacity = 0.3;
             zIndex = 2;
           } else if (i === (index + 7) % images.length) {
             // Top-left position
             x = -300; // Increased horizontal distance
-            y = -170; // Reduced vertical distance
+            y = -130; // Reduced vertical distance
             scale = 0.85;
             opacity = 0.3;
             zIndex = 2;
@@ -111,7 +112,12 @@ const EllipticalCarousel = () => {
             <motion.div 
               key={i}
               className="absolute cursor-pointer"
-              onClick={() => setIndex(i)}
+              // onClick={() => setIndex(i)}
+              onClick={() => {
+                // 让点击的图片成为 active（也就是第 index + 4 张）
+                const newIndex = (i - 4 + images.length) % images.length;
+                setIndex(newIndex);
+              }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
