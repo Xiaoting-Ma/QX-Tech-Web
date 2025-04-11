@@ -49,10 +49,19 @@ export default function HeroSection() {
     });
 
     // 清理函数
+    // return () => {
+    //   // 可能需要清理Globe实例
+    //   if (globeInstance && typeof globeInstance.dispose === 'function') {
+    //     globeInstance.dispose();
+    //   }
+    // };
     return () => {
-      // 可能需要清理Globe实例
-      if (globeInstance && typeof globeInstance.dispose === 'function') {
-        globeInstance.dispose();
+      if (globeRef.current) {
+        const canvas = globeRef.current.querySelector('canvas');
+        const gl = canvas?.getContext('webgl') as WebGLRenderingContext || canvas?.getContext('experimental-webgl') as WebGLRenderingContext;
+        const loseCtx = gl?.getExtension('WEBGL_lose_context');
+        loseCtx?.loseContext(); // 正确释放 WebGL 资源
+        globeRef.current.innerHTML = ''; // 清除 DOM 节点，防止残留
       }
     };
   }, []);

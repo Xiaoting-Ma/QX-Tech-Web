@@ -12,12 +12,13 @@ import { motion } from 'framer-motion';
 interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
+  subtitle: string;
   href: string;
   inView: boolean;
   animationDirection: 'left' | 'bottom' | 'right';
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, href, inView, animationDirection }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, subtitle, href, inView, animationDirection }) => {
   // 添加状态检测屏幕尺寸
   const [isMobile, setIsMobile] = useState(false);
   
@@ -73,15 +74,16 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, href, inView, an
   };
 
   return (
-    <Link href={href} className="block">
+    <Link href={href} className="block h-full">
       <motion.div 
-        className="bg-white rounded-lg shadow-md p-8 flex flex-col items-center transition-transform duration-300 hover:transform hover:scale-105 hover:shadow-xl"
+        className="bg-white rounded-lg shadow-md p-8 flex flex-col items-center h-full min-h-[180px] md:min-h-[300px] transition-transform duration-300 hover:transform hover:scale-105 hover:shadow-xl"
         {...getAnimationProps()}
       >
         <div className="mb-6 h-20 flex items-center justify-center text-teal-500">
           {icon}
         </div>
         <h3 className="text-xl md:text-2xl font-bold text-center text-gray-800">{title}</h3>
+        <p className="text-gray-700 text-center mt-2 text-sm md:text-base lg:text-lg">{subtitle}</p>
       </motion.div>
     </Link>
   );
@@ -92,22 +94,25 @@ const ServicesSection: React.FC = () => {
     {
       id: 1,
       icon: <BiDevices size={70} />,
-      title: "Managed Services",
-      href: "/services/managed-services",
+      title: "Website Development",
+      subtitle: "Tailored Web Solutions for Your Business Growth",
+      href: "/services",
       direction: 'left' as const
     },
     {
       id: 2,
       icon: <MdMarkEmailRead size={70} />,
-      title: "Secure Email",
-      href: "/services/secure-email",
+      title: "ERP System",
+      subtitle: "Streamline Your Operations with Smart, Scalable ERP Solutions",
+      href: "/services",
       direction: 'bottom' as const
     },
     {
       id: 3,
       icon: <TbCertificate size={70} />,
-      title: "Secure Websites",
-      href: "/services/secure-websites",
+      title: "Digital Marketing & SEO",
+      subtitle: "Build Trust with Our Secure Website Solutions",
+      href: "/services",
       direction: 'right' as const
     }
   ];
@@ -126,6 +131,7 @@ const ServicesSection: React.FC = () => {
                   key={service.id}
                   icon={service.icon}
                   title={service.title}
+                  subtitle={service.subtitle}
                   href={service.href}
                   inView={inView}
                   animationDirection={service.direction}

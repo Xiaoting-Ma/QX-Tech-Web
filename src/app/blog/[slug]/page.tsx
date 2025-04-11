@@ -68,7 +68,7 @@ async function BlogDetailPage({ params }: BlogDetailPageProps) {
       <main className="p-4 sm:p-6 md:p-10 lg:p-16"> {/* Add padding-top to account for fixed header */}
         {/* 面包屑导航 */}
         <div className="mx-auto mt-16">
-          <Link href="/blog" className="text-blue-500 hover:text-blue-600 text-sm md:text-base">
+          <Link href="/blog" className="text-yellow hover:text-yellow text-sm md:text-base">
             {blogs.goBack}
           </Link>
         </div>
@@ -107,7 +107,7 @@ async function BlogDetailPage({ params }: BlogDetailPageProps) {
           </div>
         </article>
         <div className="mx-auto mt-16">
-          <Link href="/blog" className="text-blue-500 hover:text-blue-600 text-sm md:text-base">
+          <Link href="/blog" className="text-black hover:text-yellow text-sm md:text-base">
             {blogs.goBack}
           </Link>
         </div>

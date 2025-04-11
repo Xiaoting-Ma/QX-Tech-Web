@@ -5,7 +5,7 @@ import SectionTitle from '../common/TitleSection';
 
 interface ProblemCardProps {
   imageUrl: string;
-  description: string;
+  description: Array<string>;
   alt: string;
 }
 
@@ -21,9 +21,15 @@ const ProblemCard: React.FC<ProblemCardProps> = ({ imageUrl, description, alt })
           className="transition-transform duration-300 hover:scale-110"
         />
       </div>
-      <p className="text-center text-black text-sm md:text-base lg:text-lg">
-        {description}
-      </p>
+      <div className="text-left text-black text-xs md:text-sm lg:text-base">
+        <ul className="list-disc pl-2 space-y-2">
+          {description.map((text, index) => (
+            <li key={index}>
+              {text}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
@@ -91,26 +97,36 @@ const ProblemsSection: React.FC = () => {
       id: 1,
       imageUrl: "https://images.unsplash.com/photo-1617440168937-c6497eaa8db5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       alt: "Businessman frustrated with laptop",
-      description: "Non responsive IT – Your IT guy never calls back or follows through in a timely manner."
+      description: ["Do you have great products or services but no online presence to showcase them?",
+        "Is your current website outdated, slow, or hard to navigate on mobile devices?",
+        "Do you want to stand out and converts visitors into clients?"]
     },
     {
       id: 2,
       imageUrl: "https://images.unsplash.com/photo-1493836512294-502baa1986e2?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       alt: "IT technician working on computer",
-      description: "Your IT problems never get fixed, the IT guy keeps coming back and back, just applying a Band-Aid and billing you."
+      description: ["Are you still relying on spreadsheets or disconnected tools to manage your business?",
+        "Is your team constantly repeating tasks because your systems aren’t integrated?",
+        "Do you struggle to track inventory, sales, or financials in real time?"]
     },
     {
       id: 3,
       imageUrl: "https://images.unsplash.com/photo-1707769775473-468a261c5cf1?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       alt: "Person looking at confusing charts",
-      description: "Don't understand the billing or support provided. It just seems to be changing all the time and made up as you go along."
+      description: ["Are your competitors ranking higher on Google while you're stuck on page 5?",
+        "Do you want clear, measurable results from SEO, content, and advertising strategies?",
+        "Is your website getting traffic—but not conversions?",
+      ]
     },
-    {
-      id: 4,
-      imageUrl: "https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      alt: "Business person stressed about finances",
-      description: "You are bleeding money – the issues, upgrades, tickets, and subscriptions just keep on coming month after month."
-    }
+    // {
+    //   id: 4,
+    //   imageUrl: "https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   alt: "Business person stressed about finances",
+    //   description: ["Are outdated systems or manual processes slowing down your growth?",
+    //     "Do you feel like your business is falling behind in today’s tech-driven world?",
+    //     "Are you looking for a reliable tech partner to guide your digital journey?"
+    //   ]
+    // }
   ];
 
   // 计算旋转角度，在移动设备上减少倾斜角度
@@ -170,7 +186,7 @@ const ProblemsSection: React.FC = () => {
             {/* 应用3D变换的内容 */}
             <div style={mobileContainerStyle as React.CSSProperties}>
               {/* 卡片网格 - 移动设备单列 */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 py-10">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 py-10">
                 {problems.map((problem) => (
                   <ProblemCard
                     key={problem.id}

@@ -121,7 +121,7 @@ const ProjectCard = ({ project, viewType }: { project: Project; viewType: string
           
           <Link 
             href={`/blog/${slug}`} 
-            className="text-blue-500 hover:text-blue-600 text-sm md:text-base"
+            className="text-black hover:text-darkyellow text-sm md:text-base"
           >
             {/* View Project */}
             {blogs.learnMore}
@@ -152,7 +152,7 @@ const ProjectCard = ({ project, viewType }: { project: Project; viewType: string
           <p className="text-gray-600 text-sm mb-3">{date}</p>
           {/* <p className="text-gray-700 line-clamp-3 text-sm md:text-base">{excerpt}</p> */}
           <div className="mt-4">
-            <span className="text-blue-500 hover:text-blue-600 text-sm md:text-base">{blogs.learnMore}</span>
+            <span className="text-black hover:text-darkyellow text-sm md:text-base">{blogs.learnMore}</span>
           </div>
         </div>
       </Link>
