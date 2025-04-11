@@ -28,7 +28,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full h-[48px] md:h-[55px] z-50 transition-all duration-300 ${navBackground} backdrop-blur-sm py-2`}
+      className={`fixed top-0 left-0 w-screen h-[48px] md:h-[55px] z-50 transition-all duration-300 ${navBackground} backdrop-blur-sm py-2`}
     >
       <div className="container-custom flex items-center justify-between">
         <Link href="/" className="flex items-center">
