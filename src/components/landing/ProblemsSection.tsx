@@ -186,7 +186,7 @@ const ProblemsSection: React.FC = () => {
             {/* 应用3D变换的内容 */}
             <div style={mobileContainerStyle as React.CSSProperties}>
               {/* 卡片网格 - 移动设备单列 */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 py-10">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 py-10">
                 {problems.map((problem) => (
                   <ProblemCard
                     key={problem.id}
