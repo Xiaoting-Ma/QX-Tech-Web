@@ -74,7 +74,7 @@ const EllipticalCarousel = () => {
     <div className="mt-20">
       <SectionTitle title="OUR SHOWCASE" />
       <div
-        className="relative z-10 w-screen h-[400px] sm:h-[600px] flex items-center justify-center mb-36 mt-10 pointer-events-auto"
+        className="relative z-10 w-screen h-[400px] md:h-[600px] flex items-center justify-center mb-36 mt-10 pointer-events-auto"
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >

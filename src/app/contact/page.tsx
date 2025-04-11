@@ -3,6 +3,7 @@ import Timeline from "@/components/contact/Timeline";
 import NarrowBanner from "@/components/common/NarrowBanner";
 import Footer from "@/components/common/Footer";
 import TeamSection from "@/components/contact/TeamSection";
+import ContactUsSection from "@/components/contact/ContactUs";
 
 export default function HomePage() {
     return (
@@ -18,6 +19,8 @@ export default function HomePage() {
           <Timeline />
         </div>
         <TeamSection />
+        <ContactUsSection />
+
         <Footer />
       </main>
     );

@@ -9,6 +9,7 @@ import Footer from '../components/common/Footer';
 import Navbar from '../components/common/Navbar';
 import CircularCarousel from '../components/landing/CircularCarousel';
 import GetQuotesSection from '@/components/landing/GetQuoteSection';
+import ContactAboutUs from '@/components/landing/ContactAboutUs';
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
         <CircularCarousel />
         <GetQuotesSection />
         <WhyUsSection />
+        <ContactAboutUs />
         <DifferenceSection />
         <ContactSection />
       </div>
