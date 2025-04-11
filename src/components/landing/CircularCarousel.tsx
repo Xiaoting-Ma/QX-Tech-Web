@@ -21,6 +21,22 @@ const EllipticalCarousel = () => {
   const [index, setIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
 
+  const [isMobile, setIsMobile] = useState(false);
+    
+    // 检测设备类型
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, []);
+
   useEffect(() => {
     if (isHovering) return;
     
@@ -31,11 +47,34 @@ const EllipticalCarousel = () => {
     return () => clearInterval(interval);
   }, [isHovering]);
 
+  const windowPositions = [
+    { x: 0, y: -160, scale: 0.9, opacity: 0.3, zIndex: 2 },
+    { x: 300, y: -130, scale: 0.85, opacity: 0.3, zIndex: 2 },
+    { x: 500, y: -50, scale: 0.85, opacity: 0.3, zIndex: 2 },
+    { x: 300, y: 60, scale: 1, opacity: 0.6, zIndex: 5 },
+    { x: 0, y: 90, scale: 1.5, opacity: 1, zIndex: 10 },
+    { x: -300, y: 60, scale: 1, opacity: 0.6, zIndex: 5 },
+    { x: -500, y: -50, scale: 0.85, opacity: 0.3, zIndex: 2 },
+    { x: -300, y: -130, scale: 0.85, opacity: 0.3, zIndex: 2 },
+  ];
+
+  const mobilePositions = [
+    { x: 0, y: 0, scale: 1, opacity: 0.5, zIndex: 2 },
+    { x: 60, y: 0, scale: 1.2, opacity: 0.5, zIndex: 3 },
+    { x: 40, y: 0, scale: 1.3, opacity: 0.6, zIndex: 4 },
+    { x: 20, y: 0, scale: 1.4, opacity: 0.8, zIndex: 5 },
+    { x: 0, y: 0, scale: 1.5, opacity: 1, zIndex: 10 },
+    { x: -20, y: 0, scale: 1.4, opacity: 0.8, zIndex: 5 },
+    { x: -40, y: 0, scale: 1.3, opacity: 0.6, zIndex: 4 },
+    { x: -60, y: 0, scale: 1.2, opacity: 0.5, zIndex: 3 },
+  ];
+ 
+
   return (
     <div className="mt-20">
       <SectionTitle title="OUR SHOWCASE" />
-      <div 
-        className="relative z-10 w-full h-[600px] flex items-center justify-center mb-36 mt-10 pointer-events-auto"
+      <div
+        className="relative z-10 w-screen h-[400px] sm:h-[600px] flex items-center justify-center mb-36 mt-10 pointer-events-auto"
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
@@ -46,65 +85,28 @@ const EllipticalCarousel = () => {
           let scale = 0.8;
           let opacity = 0.3;
           let zIndex = 1;
+          let rotate = 0;
 
           // Calculate position for each image in the wider, shorter elliptical arrangement
           // Optimized for MacBook display (wider horizontally, shorter vertically)
-          if (i === (index) % images.length) {
-            // Top position
-            x = 0;
-            y = -160; // Reduced vertical distance
-            scale = 0.9;
-            opacity = 0.3;
-            zIndex = 2;
-          } else if (i === (index + 1) % images.length) {
-            // Top-right position
-            x = 300; // Increased horizontal distance
-            y = -130; // Reduced vertical distance
-            scale = 0.85;
-            opacity = 0.3;
-            zIndex = 2;
-          } else if (i === (index + 2) % images.length) {
-            // Right position
-            x = 500; // Increased horizontal distance significantly
-            y = -50; // Closer to center vertically
-            scale = 0.85;
-            opacity = 0.3;
-            zIndex = 2;
-          } else if (i === (index + 3) % images.length) {
-            // Bottom-right position
-            x = 300; // Increased horizontal distance
-            y = 60; // Reduced vertical distance
-            scale = 1;
-            opacity = 0.6;
-            zIndex = 5;
-          } else if (i === (index + 4) % images.length) {
-            // Bottom position - the focused/active image
-            x = 0;
-            y = 90; 
-            scale = 1.5; 
-            opacity = 1;
-            zIndex = 10;
-          } else if (i === (index + 5) % images.length) {
-            // Bottom-left position
-            x = -300; // Increased horizontal distance
-            y = 60; // Reduced vertical distance
-            scale = 1;
-            opacity = 0.6;
-            zIndex = 5;
-          } else if (i === (index + 6) % images.length) {
-            // Left position
-            x = -500; // Increased horizontal distance significantly
-            y = -50; // Closer to center vertically
-            scale = 0.85;
-            opacity = 0.3;
-            zIndex = 2;
-          } else if (i === (index + 7) % images.length) {
-            // Top-left position
-            x = -300; // Increased horizontal distance
-            y = -130; // Reduced vertical distance
-            scale = 0.85;
-            opacity = 0.3;
-            zIndex = 2;
+          if (isMobile) {
+            // Adjust positions for mobile
+            const posIndex = (i - index + images.length) % images.length;
+            const parray = mobilePositions[posIndex];
+            x=parray.x;
+            y=parray.y;
+            scale=parray.scale;
+            opacity=parray.opacity;
+            zIndex=parray.zIndex;
+          }
+          else{
+            const posIndex = (i - index + images.length) % images.length;
+            const parray = windowPositions[posIndex];
+            x=parray.x;
+            y=parray.y;
+            scale=parray.scale;
+            opacity=parray.opacity;
+            zIndex=parray.zIndex;
           }
 
           return (
@@ -117,8 +119,8 @@ const EllipticalCarousel = () => {
                 const newIndex = (i - 4 + images.length) % images.length;
                 setIndex(newIndex);
               }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0  }}
+              animate={{ opacity: 1 , zIndex}}
               transition={{ duration: 0.5 }}
             >
               <motion.img
