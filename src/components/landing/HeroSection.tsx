@@ -35,7 +35,7 @@ export default function HeroSection() {
       const controls = globeInstance.controls();
       if (controls) {
         controls.autoRotate = true;
-        controls.autoRotateSpeed = 0.2;
+        controls.autoRotateSpeed = 1;
       }
       
       // 设置视角

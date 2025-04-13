@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import SectionTitle from '@/components/common/TitleSection';
 
 const GetQuotesSection = () => {
   return (
@@ -11,14 +12,12 @@ const GetQuotesSection = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between">
           {/* Left Content */}
           <div className="w-full lg:w-5/12 mb-10 lg:mb-0">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Get free quotes
-            </h2>
+            {/* Section Title */}
+            <SectionTitle title="Get free quotes" textPosition='text-left'/>
+            
             <p className="text-base md:text-lg text-gray-700 mb-8 max-w-lg">
-              Whether you need a builder or a locksmith, a hairdresser or a
-              florist, Yellow Pages has thousands of local businesses ready to
-              quote your job. Compare multiple quotes so you get the right fit,
-              the first time.
+            Whether you need a website, an ERP system, or digital marketing solutions, our team is ready to deliver.
+            Get personalized proposals and find the perfect solution for your business.
             </p>
 
             {/* CTA Button */}
@@ -31,7 +30,7 @@ const GetQuotesSection = () => {
           </div>
 
           {/* Right Image with Numbering Graphics */}
-          <div className="w-full lg:w-6/12 relative">
+          <div className="w-4/5 lg:w-6/12 relative">
             <div className="relative">
               {/* Main Image */}
               <div className="rounded-lg overflow-hidden">
@@ -50,26 +49,26 @@ const GetQuotesSection = () => {
                 <div className="bg-white rounded-lg p-4 shadow-lg">
                   {/* Step 1 */}
                   <div className="flex items-center mb-4">
-                    <div className="w-8 h-8 rounded-full bg-[#FECD35] flex items-center justify-center text-gray-400 font-medium mr-3">
+                    <div className="w-8 h-8 rounded-full bg-yellow flex items-center justify-center text-gray-400 font-medium mr-3">
                       1
                     </div>
-                    <div className="bg-[#FECD35] h-4 w-full rounded"></div>
+                    <div className="bg-gray-200 h-4 w-full rounded"></div>
                   </div>
                   
                   {/* Step 2 (Highlighted) */}
                   <div className="flex items-center mb-4">
-                    <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-800 font-medium mr-3">
+                    <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-800 font-medium mr-3">
                       2
                     </div>
-                    <div className="bg-gray-100 h-4 w-full rounded"></div>
+                    <div className="bg-gray-200 h-4 w-full rounded"></div>
                   </div>
                   
                   {/* Step 3 */}
                   <div className="flex items-center">
-                    <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 font-medium mr-3">
+                    <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 font-medium mr-3">
                       3
                     </div>
-                    <div className="bg-gray-100 h-4 w-full rounded"></div>
+                    <div className="bg-gray-200 h-4 w-full rounded"></div>
                   </div>
                 </div>
               </div>

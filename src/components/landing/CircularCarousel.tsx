@@ -42,13 +42,13 @@ const EllipticalCarousel = () => {
     
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 3000); // Switch every 3 seconds
+    }, 2000); // Switch every 2 seconds
 
     return () => clearInterval(interval);
   }, [isHovering]);
 
   const windowPositions = [
-    { x: 0, y: -160, scale: 0.9, opacity: 0.3, zIndex: 2 },
+    { x: 0, y: -160, scale: 0.85, opacity: 0.3, zIndex: 2 },
     { x: 300, y: -130, scale: 0.85, opacity: 0.3, zIndex: 2 },
     { x: 500, y: -50, scale: 0.85, opacity: 0.3, zIndex: 2 },
     { x: 300, y: 60, scale: 1, opacity: 0.6, zIndex: 5 },
@@ -72,7 +72,7 @@ const EllipticalCarousel = () => {
 
   return (
     <div className="mt-20">
-      <SectionTitle title="OUR SHOWCASE" />
+      <SectionTitle title="Our Showcase" />
       <div
         className="relative z-10 w-screen h-[400px] md:h-[600px] flex items-center justify-center mb-36 mt-10 pointer-events-auto"
         onMouseEnter={() => setIsHovering(true)}
