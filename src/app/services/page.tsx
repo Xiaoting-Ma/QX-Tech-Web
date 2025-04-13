@@ -4,6 +4,7 @@ import ServiceCard from "@/components/services/ServiceCard";
 import ServiceProcess from "@/components/services/ServiceProcess";
 import TestimonialCarousel from "@/components/services/TestimonialCarousel";
 import Footer from "@/components/common/Footer";
+import ServicesIntroduction from "@/components/services/ServicesIntroduction";
 
 export default function HomePage() {
     return (
@@ -16,6 +17,7 @@ export default function HomePage() {
           height="350px"
         />
         <ServiceCard />
+        <ServicesIntroduction />
         <ServiceProcess />
         <TestimonialCarousel />
         <Footer />

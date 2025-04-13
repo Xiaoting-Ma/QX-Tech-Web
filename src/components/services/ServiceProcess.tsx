@@ -34,7 +34,7 @@ const ServiceProcess = () => {
   ];
 
   return (
-    <div className="relative w-full py-16 px-4 md:px-8 lg:px-16 bg-white">
+    <div className="relative w-full py-16 px-4 md:px-8 lg:px-12 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           {/* Left text content */}
@@ -53,15 +53,15 @@ const ServiceProcess = () => {
               {steps.map((step) => (
                 <div key={step.number}>
                     {/* Step Number */}
-                    <p className="text-sm font-semibold text-darkyellow">{step.number}</p>
+                    <p className="text-base md:text-lg font-semibold text-darkyellow">{step.number}</p>
                     
                     {/* Step Title */}
-                    <p className="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">
+                    <p className="mt-2 text-sm md:text-base font-semibold tracking-tight text-gray-800">
                     {step.title}
                     </p>
 
                     {/* Step Description */}
-                    <p className="mt-1 text-sm text-pretty leading-7 text-gray-500">
+                    <p className="mt-1 text-sm md:text-base text-gray-500">
                     {step.subtitle}
                     </p>
                 </div>
@@ -91,18 +91,6 @@ const ServiceProcess = () => {
                 className="rounded-full"
               />
               
-              {/* Purple paper plane animation */}
-              <div className="absolute top-[15%] right-[25%] w-16 h-16 z-20">
-                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-purple-400">
-                  <path d="M21.75 3.75L2.25 10.5L9.75 12.75L12 20.25L21.75 3.75Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                
-                {/* Dotted path */}
-                <div className="absolute top-[80%] left-[80%] w-16 h-16 border-2 border-dashed border-purple-400 rounded-full opacity-60"></div>
-              </div>
-              
-              {/* Orange circle decoration */}
-              <div className="absolute top-[10%] right-[5%] w-8 h-8 bg-orange-400 rounded-full opacity-80"></div>
             </div>
           </div>
         </div>
