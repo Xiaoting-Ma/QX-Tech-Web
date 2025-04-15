@@ -3,28 +3,27 @@ import localFont from "next/font/local";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 
-// Load local fonts from public/fonts
-const apercuPro = localFont({
-  variable: "--font-apercu-pro",
+const techFonts = localFont({
+  variable: "--font-tech",
   src: [
     {
-      path: "../../public/fonts/ApercuProRegular.woff2",
+      path: "../../public/fonts/Inter-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/ApercuProMedium.woff2",
+      path: "../../public/fonts/Inter-Medium.otf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../../public/fonts/ApercuProBold.woff2",
+      path: "../../public/fonts/Inter-Bold.otf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../../public/fonts/ApercuProBlack.woff2",
-      weight: "900",
+      path: "../../public/fonts/Inter-ExtraBold.otf",
+      weight: "800",
       style: "normal",
     },
   ],
@@ -44,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${apercuPro.variable}`}>
+    <html lang="en" className={`${techFonts.variable}`}>
       <head>
         <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
       </head>
