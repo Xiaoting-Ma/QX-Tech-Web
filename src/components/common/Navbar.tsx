@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import logo from "../../../public/images/logo.png";
+import logo from "../../../public/images/logo.svg";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,7 +19,7 @@ export default function Navbar() {
   }, []);
 
   const navBackground = !isScrolled ? "bg-transparent" : "bg-white shadow-md";
-  const textColor = !isScrolled ? "text-white" : "text-black";
+  const textColor = !isScrolled ? "text-white" : "text-gray-800";
 
   const linkClass = (href: string) =>
     `hover:text-darkyellow transition-colors ${
@@ -28,17 +28,20 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-screen h-[48px] md:h-[55px] z-50 transition-all duration-300 ${navBackground} backdrop-blur-sm py-2`}
+      className={`fixed top-0 left-0 w-screen h-[55pxpx] md:h-[60px] z-50 transition-all duration-300 ${navBackground} backdrop-blur-sm py-2`}
     >
-      <div className="container-custom flex items-center justify-between">
+      <div className="container-custom flex items-center justify-between mt-1">
         <Link href="/" className="flex items-center">
           <Image
             src={logo}
             alt="QX Tech It Company Logo"
             width={120}
             height={40}
-            className="h-8 md:h-10 w-auto "
+            className="h-8 md:h-10 w-auto"
           />
+          <span className={`text-base md:text-lg font-bold ml-2 ${textColor}`} >
+            QX Tech
+          </span>
         </Link>
 
         {/* Mobile menu button */}
@@ -73,7 +76,7 @@ export default function Navbar() {
 
         {/* Desktop navigation */}
         <nav
-          className={`hidden md:flex items-center space-x-8 ${textColor}`}
+          className={`hidden md:flex text-base md:text-lg items-center space-x-8 ${textColor}`}
         >
           <Link href="/" className={linkClass("/")}>
             Home
@@ -87,12 +90,12 @@ export default function Navbar() {
           <Link href="/blog" className={linkClass("/blog")}>
             Blog
           </Link>
-          <Link href="/contact" className={linkClass("/contact")}>
+          <Link href="/about-us" className={linkClass("/about-us")}>
             About Us
           </Link>
-          <Link href="/?redirect=off" className={linkClass("/?redirect=off")}>
+          {/* <Link href="/?redirect=off" className={linkClass("/?redirect=off")}>
             EN
-          </Link>
+          </Link> */}
         </nav>
       </div>
 
@@ -124,19 +127,19 @@ export default function Navbar() {
             Blog
           </Link>
           <Link
-            href="/contact"
+            href="/about-us"
             className="block"
             onClick={() => setIsMenuOpen(false)}
           >
             About Us
           </Link>
-          <Link
+          {/* <Link
             href="/?redirect=off"
             className="block"
             onClick={() => setIsMenuOpen(false)}
           >
             EN
-          </Link>
+          </Link> */}
         </div>
       )}
     </header>
