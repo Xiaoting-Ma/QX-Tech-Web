@@ -9,33 +9,33 @@ import 'swiper/css';
 const testimonials = [
   {
     id: 1,
-    name: "Alison Thompson",
-    position: "CFO, Global Retail Solutions",
-    text: "4data have proved to be a good business partner to us over the years. Most importantly, they don't just provide products and services, but scaled and strategic solutions that fit our business model and budget."
-  },
+    name: "Ella Nguyen",
+    position: "Founder, Bloom Interiors",
+    text: "Our website looks amazing and functions exactly how we envisioned it. The QX Tech team was efficient, creative, and really listened to what we needed."
+  },  
   {
     id: 2,
-    name: "Careena Rodriguez",
-    position: "Director of Operations, HealthTech Labs",
-    text: "I am pleased to tell you that at this point, every file that was encrypted by today's malware infection, has been restored from back up. Their team worked tirelessly to get our systems back online."
+    name: "Jason Liu",
+    position: "Marketing Manager, CafeCo",
+    text: "Honestly, it’s the first time I’ve worked with a dev team that got everything right on the first pass. Clean design, fast load speed — we’ve seen a bump in online orders already."
   },
   {
     id: 3,
-    name: "Nicole Patel",
-    position: "CEO, Innovative Startups Inc.",
-    text: "I would like to take this opportunity to thank you very much for all the assistance you have provided us over the past 4 or so years. If you ever require a business reference I would be more than happy to help."
+    name: "Stephanie Grant",
+    position: "Operations Director, MedixCare",
+    text: "What used to take our staff hours now takes minutes. Their ERP setup didn’t just solve problems — it made our daily operations make sense again."
   },
   {
     id: 4,
-    name: "Michael Chen",
-    position: "IT Manager, Pacific Financial Group",
-    text: "Your cloud migration services have transformed how our business operates. The seamless transition and ongoing support have exceeded our expectations. Our team can now work efficiently from anywhere."
+    name: "Rachel Gomez",
+    position: "Co-founder, The Artisan Studio",
+    text: "Since partnering with QX Tech, we’ve seen a steady boost in search traffic and engagement. Their SEO insights really work."
   },
   {
     id: 5,
-    name: "Sarah Williams",
-    position: "Marketing Director, Creative Solutions",
-    text: "What impresses me most about your IT support is the consistency. For three years now, your team has provided us with reliable, knowledgeable assistance whenever we need it."
+    name: "Tom Reynolds",
+    position: "Head of Sales, CityTech Solutions",
+    text: "Their digital marketing strategy brought in leads we were missing before. They know what they're doing and keep things clear and simple."
   }
 ];
 
@@ -43,10 +43,10 @@ const TestimonialCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="py-16 bg-gradient-to-r from-black to-gray-100">
+    <section className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
 
-        <SectionTitle title="What Our Clients Say" textColor='text-white' />
+        <SectionTitle title="What Our Clients Say" textColor='text-gray-800' />
        
         <Swiper
           modules={[Autoplay]}
@@ -73,7 +73,7 @@ const TestimonialCarousel = () => {
         >
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.id}>
-              <div className="bg-teal-500 bg-opacity-80 p-8 rounded-lg shadow-lg h-full min-h-[320px]">
+              <div className="bg-teal-500 bg-opacity-80 p-8 rounded-lg shadow-lg h-full min-h-[200px]">
                 <div className="mb-6">
                   <p className="text-white text-base">
                     "{testimonial.text}"
@@ -82,7 +82,7 @@ const TestimonialCarousel = () => {
                 
                 <div className="text-white mt-4">
                   <h3 className="font-bold text-lg">{testimonial.name}</h3>
-                  <p className="text-sm opacity-80">{testimonial.position}</p>
+                  {/* <p className="text-sm opacity-80">{testimonial.position}</p> */}
                 </div>
               </div>
             </SwiperSlide>
@@ -100,8 +100,8 @@ const TestimonialCarousel = () => {
                   swiperInstance.slideToLoop(index);
                 }
               }}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                activeIndex === index ? 'bg-white w-6' : 'bg-white/50'
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                activeIndex === index ? 'bg-yellow w-6' : 'bg-gray-300'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

@@ -31,8 +31,11 @@ const apercuPro = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "QX Tech",
-  description: "QX Tech is a leading IT company specializing in web development, SEO, and IT solutions.",
+  title: "QX Tech | Reliable IT Solutions for Your Business Success",
+  description: "QX Tech is a leading IT company specializing in web development, ERP System, digital marketing, SEO.",
+  icons: {
+    icon: '/images/favicon.svg',
+  },
 };
 
 export default function RootLayout({
@@ -42,6 +45,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${apercuPro.variable}`}>
+      <head>
+        <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+      </head>
       <ClientBody>{children}</ClientBody>
     </html>
   );

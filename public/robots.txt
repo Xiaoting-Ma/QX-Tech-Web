@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://it.qixin.com.au
+
+# Sitemaps
+Sitemap: https://it.qixin.com.au/sitemap.xml

@@ -4,18 +4,9 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/common/TitleSection";
 import ContactButton from "@/components/common/ViewAllButton";
+import { showcaseData } from '@/components/showcase/ShowcaseData';
 
-// Sample images - replace with your actual images
-const images = [
-  "https://images.unsplash.com/photo-1542744095-291d1f67b221?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1551033406-611cf9a28f67?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-];
+const eightItems = showcaseData.slice(0, 8);
 
 const EllipticalCarousel = () => {
   const [index, setIndex] = useState(0);
@@ -41,7 +32,7 @@ const EllipticalCarousel = () => {
     if (isHovering) return;
     
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
+      setIndex((prev) => (prev + 1) % 8);
     }, 2000); // Switch every 2 seconds
 
     return () => clearInterval(interval);
@@ -51,9 +42,9 @@ const EllipticalCarousel = () => {
     { x: 0, y: -160, scale: 0.85, opacity: 0.3, zIndex: 2 },
     { x: 300, y: -130, scale: 0.85, opacity: 0.3, zIndex: 2 },
     { x: 500, y: -50, scale: 0.85, opacity: 0.3, zIndex: 2 },
-    { x: 300, y: 60, scale: 1, opacity: 0.6, zIndex: 5 },
+    { x: 300, y: 60, scale: 1, opacity: 1, zIndex: 5 },
     { x: 0, y: 90, scale: 1.5, opacity: 1, zIndex: 10 },
-    { x: -300, y: 60, scale: 1, opacity: 0.6, zIndex: 5 },
+    { x: -300, y: 60, scale: 1, opacity: 1, zIndex: 5 },
     { x: -500, y: -50, scale: 0.85, opacity: 0.3, zIndex: 2 },
     { x: -300, y: -130, scale: 0.85, opacity: 0.3, zIndex: 2 },
   ];
@@ -78,7 +69,7 @@ const EllipticalCarousel = () => {
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
-        {images.map((src, i) => {
+        {eightItems.map((src, i) => {
           const isActive = i === index;
           let x = 0;
           let y = 0;
@@ -91,7 +82,7 @@ const EllipticalCarousel = () => {
           // Optimized for MacBook display (wider horizontally, shorter vertically)
           if (isMobile) {
             // Adjust positions for mobile
-            const posIndex = (i - index + images.length) % images.length;
+            const posIndex = (i - index + 8) % 8;
             const parray = mobilePositions[posIndex];
             x=parray.x;
             y=parray.y;
@@ -100,7 +91,7 @@ const EllipticalCarousel = () => {
             zIndex=parray.zIndex;
           }
           else{
-            const posIndex = (i - index + images.length) % images.length;
+            const posIndex = (i - index + 8) % 8;
             const parray = windowPositions[posIndex];
             x=parray.x;
             y=parray.y;
@@ -116,7 +107,7 @@ const EllipticalCarousel = () => {
               // onClick={() => setIndex(i)}
               onClick={() => {
                 // 让点击的图片成为 active（也就是第 index + 4 张）
-                const newIndex = (i - 4 + images.length) % images.length;
+                const newIndex = (i - 4 + 8) % 8;
                 setIndex(newIndex);
               }}
               initial={{ opacity: 0  }}
@@ -124,10 +115,11 @@ const EllipticalCarousel = () => {
               transition={{ duration: 0.5 }}
             >
               <motion.img
-                src={src}
-                alt={`Showcase ${i + 1}`}
-                className="object-cover shadow-lg border border-black border-2 rounded-lg"
+                src={typeof src === 'string' ? src : src.imageUrl}
+                alt={`QX Tech Project Showcase ${i + 1}`}
+                className="object-cover object-top shadow-lg border border-black border-2 rounded-lg"
                 style={{ width: '180px', height: '270px' }} // Slightly smaller images
+                loading="lazy" // 添加这一行实现懒加载
                 initial={{ opacity: 0.5, scale: 0.8 }}
                 animate={{
                   opacity,
@@ -141,7 +133,6 @@ const EllipticalCarousel = () => {
                 transition={{ 
                   duration: 0.8, 
                   ease: "easeInOut",
-                  delay: 0.05 * i
                 }}
                 whileHover={{ 
                   scale: scale * 1.05,
@@ -154,14 +145,14 @@ const EllipticalCarousel = () => {
 
         {/* Navigation indicators */}
         <div className="absolute bottom-[-60px] flex space-x-2 z-30">
-          {images.map((_, i) => (
+          {eightItems.map((_, i) => (
             <button
               key={i}
               onClick={() => setIndex(i)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 index === i ? 'bg-black w-6' : 'bg-gray-300'
               }`}
-              aria-label={`Go to image ${i + 1}`}
+              aria-label={`QX Tech Project Image ${i + 1}`}
             />
           ))}
         </div>

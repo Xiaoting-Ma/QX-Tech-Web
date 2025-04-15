@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
 import InView from '@/components/common/InView';
 
@@ -86,12 +86,12 @@ const NarrowBanner = ({
               }}
             >
               <div className="max-w-4xl mx-auto">
-                <h2 
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider mb-6 uppercase"
+                <h1 
+                  className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-wider mb-6 uppercase mt-8"
                   style={{ color: titleColor }}
                 >
                   {title}
-                </h2>
+                </h1>
                 <p 
                   className="text-base md:text-lg leading-relaxed max-w-3xl mx-auto"
                   style={{ color: contentColor }}

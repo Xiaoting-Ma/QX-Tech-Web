@@ -68,7 +68,6 @@ export default function HeroSection() {
 
   return (
     <section
-      id="Home"
       className="relative min-h-screen flex items-center bg-black pt-16"
     >
       <div className="container-custom z-10 relative">
@@ -78,11 +77,11 @@ export default function HeroSection() {
             <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white">Custom Solutions</span>
             <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white">Endless Possibilities</span>
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-300">
+          <h2 className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-300">
             We help build, enhance, and transform your digital presence.
-          </p>
-          <Link href="/contact" className="btn-primary text-darkyellow text-lg bg-white hover:bg-darkyellow hover:text-black transition duration-300">
-            Contact
+          </h2>
+          <Link href="/about-us#contact" className="btn-primary text-darkyellow text-lg bg-white hover:bg-yellow hover:text-black transition duration-300">
+            Contact Us
           </Link>
         </div>
       </div>

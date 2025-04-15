@@ -1,31 +1,51 @@
 export const showcaseData = [
     {
       id: 1,
-      title: "Elora Beauty",
-      imageUrl: "https://images.unsplash.com/photo-1542744095-291d1f67b221?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      description: 'A brief description of Project One.',
-      link: "/projects/elora-beauty"
+      title: "Three Stones Finance",
+      imageUrl: "/images/showcase/ThreeStones.png",
+      link: "https://threestonesfinance.com/en"
     },
     {
       id: 2,
-      title: "Ezpctech",
-      imageUrl: "https://images.unsplash.com/photo-1542744095-291d1f67b221?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      description: 'A brief description of Project One.',
-      link: "/projects/ezpctech"
+      title: "DURALYZE Green Energy",
+      imageUrl: "/images/showcase/DURALYZE.png",
+      link: "https://www.duralyze.com/"
     },
     {
       id: 3,
-      title: "Nuphy",
-      imageUrl: "https://images.unsplash.com/photo-1542744095-291d1f67b221?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      description: 'A brief description of Project One.',
-      link: "/projects/nuphy"
+      title: "JL Variety Store",
+      imageUrl: "/images/showcase/JLVarietyStore.png",
+      link: "https://www.jlvarietystore.com.au/"
     },
     {
       id: 4,
-      title: "Gem Sports",
-      imageUrl: "https://images.unsplash.com/photo-1542744095-291d1f67b221?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      description: 'A brief description of Project One.',
-      link: "/projects/gem-sports"
-    }
+      title: "Nuit Boutique",
+      imageUrl:"/images/showcase/NuitBoutique.png",
+      link: "https://nuitboutique.com/"
+    },
+    {
+      id: 5,
+      title: "QX Tech IT",
+      imageUrl: "/images/showcase/QXTech.png",
+      link: "https://it.qixin.com.au/"
+    },
+    {
+      id: 6,
+      title: "Ultherapy Prime",
+      imageUrl: "/images/showcase/UltherapyPrime.png",
+      link: "https://www.sycamoremedispa.com.au/ultherapyprime"
+    },
+    {
+      id: 7,
+      title: "VALOR HYPE Store",
+      imageUrl: "/images/showcase/VALOR-HYPE.png",
+      link: "https://valorhype.com.au/"
+    },
+    {
+      id: 8,
+      title: "Vatee",
+      imageUrl:"/images/showcase/Vatee.png",
+      link: "https://vateefx.com/"
+    },
 ];
 

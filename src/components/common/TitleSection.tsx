@@ -11,13 +11,9 @@ interface SectionTitleProps {
 const SectionTitle: React.FC<SectionTitleProps> = ({ 
   title, 
   textColor = 'text-black', // 设置默认值为黑色
-  textPosition = 'text-center', // 设置默认值为左对齐
+  textPosition = 'text-center', // 设置默认值为居中
 }) => {
   return (
-    // <h2 className={`relative text-center font-bold ${textColor} text-xl md:text-2xl lg:text-3xl text-gray-900 pb-2 mb-10`}>
-    //   {title}
-    //   <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-yellow"></span>
-    // </h2>
     <h2 className={`relative ${textPosition} text-xl md:text-2xl lg:text-3xl pb-2 mb-10 font-bold ${textColor} text-gray-900`}>
       <span className="inline-block relative">
         {title}

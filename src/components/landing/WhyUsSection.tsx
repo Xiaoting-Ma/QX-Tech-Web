@@ -12,28 +12,28 @@ const WhyChooseUsSection = () => {
     {
       id: 1,
       icon: <HiLightningBolt size={24} className="text-white" />,
-      iconBgColor: 'bg-blue-500',
+      iconBgColor: 'bg-teal-500',
       title: 'Fast Delivery',
       description: 'We have a dedicated development team ready to launch your project quickly and efficiently.'
     },
     {
       id: 2,
       icon: <FiDollarSign size={24} className="text-white" />,
-      iconBgColor: 'bg-blue-500',
+      iconBgColor: 'bg-teal-500',
       title: 'Affordable',
       description: 'High-quality development without the high price tag — tailored to your budget.'
     },
     {
       id: 3,
       icon: <FiHeadphones size={24} className="text-white" />,
-      iconBgColor: 'bg-blue-500',
+      iconBgColor: 'bg-teal-500',
       title: '24/7 Local Support',
       description: 'Our Australian-based support team is always available to respond promptly to your needs.'
     },
     {
       id: 4,
       icon: <FiShield size={24} className="text-white" />,
-      iconBgColor: 'bg-blue-500',
+      iconBgColor: 'bg-teal-500',
       title: 'Secure & Reliable',
       description: 'We prioritize system security and stability to keep your business running smoothly.'
     }
@@ -46,7 +46,7 @@ const WhyChooseUsSection = () => {
   ]
 
   return (
-    <section className="py-8 px-4 md:py-12 bg-white">
+    <section className="py-8 px-4 md:py-12 bg-white mb-10 md:mb-20 lg:mb-24">
       <InView>
         {({ inView }) => (
       <div className="container mx-auto max-w-7xl">
@@ -68,9 +68,10 @@ const WhyChooseUsSection = () => {
                   height: '300px',
                 }}
               >
-                <img
+                <Image
+                  fill
                   src={img}
-                  alt={`Duralyze Stacked ${index + 1}`}
+                  alt={`QX Tech Stacked ${index + 1}`}
                   className="w-full h-full object-cover shadow-lg rounded-xl"
                 />
               </div>

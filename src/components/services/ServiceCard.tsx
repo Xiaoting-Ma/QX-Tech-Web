@@ -2,11 +2,7 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
-import { FaCode } from "react-icons/fa6";
-import { FaMobileAlt } from "react-icons/fa";
-import { FaRegChartBar } from "react-icons/fa";
-import { RiCustomerService2Fill } from "react-icons/ri";
-import { CgPacman } from "react-icons/cg";
+import { FaLaptopCode, FaProjectDiagram, FaSearchDollar } from "react-icons/fa";
 import SectionTitle from "../common/TitleSection";
 
 // Dynamically import Slider to avoid SSR issues
@@ -49,34 +45,25 @@ const SliderCSS = () => {
 const servicesData = [
   {
     id: 1,
-    heading: "Web Design & Development",
-    description: "We create user-friendly, high-quality websites tailored to your brand's needs, designed to engage visitors and drive business growth.",
-    icon: FaCode,
+    heading: "Website Development",
+    description:
+      "We design and develop responsive, high-performance websites that reflect your brand identity. From business landing pages to eCommerce platforms, we focus on usability, speed, and conversion to help your business grow online.",
+    icon: FaLaptopCode,
   },
   {
     id: 2,
-    heading: "Mobile App Development",
-    description: "We help you build user-centered, high-performance mobile apps for iOS and Android, designed to engage customers and enhance employee efficiency.",
-    icon: FaMobileAlt,
+    heading: "ERP System",
+    description:
+      "We provide tailored ERP system solutions to help you streamline internal operations, manage resources efficiently, and scale your business. Our systems integrate seamlessly across departments such as HR, Finance, Inventory, and Sales.",
+    icon: FaProjectDiagram,
   },
   {
     id: 3,
-    heading: "Data Analysis",
-    description: "Our data analysis solutions help you unlock deeper insights and maximise data value. Through data modelling and visualization, we provide trusted insights that enhance business planning and decision-making.",
-    icon: FaRegChartBar,
+    heading: "Digital Marketing & SEO",
+    description:
+      "Our digital marketing and SEO strategies are built to boost your online visibility, attract qualified traffic, and improve your search engine rankings. From keyword research to content strategy, we help your business stay ahead.",
+    icon: FaSearchDollar,
   },
-  {
-    id: 4,
-    heading: "IT Support",
-    description: "We offer expert support for software installation, data backup and more. With proactive and reactive solutions, including remote support or on-site assistance, we keep your business secure and productive.",
-    icon: RiCustomerService2Fill,
-  },
-  {
-    id: 5,
-    heading: "Game Development",
-    description: "From concept to visualization, our team delivers 2D and 3D games and visuals that bring your ideas to life. Combining creativity and technical expertise, we help you stand out in the industry.",
-    icon: CgPacman,
-  }
 ];
 
 const ServiceCards = () => {

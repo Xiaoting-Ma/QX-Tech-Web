@@ -1,5 +1,5 @@
 // src/pages/blog/[slug].tsx
-
+import Head from "next/head";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 import NarrowBanner from "@/components/common/NarrowBanner";
@@ -58,6 +58,24 @@ async function BlogDetailPage({ params }: BlogDetailPageProps) {
 
   return (
     <>
+      <Head>
+        <title>{`${blogContent.titleDetail} | QX Tech Blog`}</title>
+        <meta
+          name="description"
+          content={`Explore in-depth insights and updates from QX Tech.`}
+        />
+        <meta
+          name="keywords"
+          content={`QX Tech, Blog, ${blogContent.title}, Web Development, SEO, Tech Tips`}
+        />
+        <meta property="og:title" content={`${blogContent.titleDetail} | QX Tech`} />
+        <meta property="og:description" content={`Explore our latest insights and tech updates.`} />
+        <meta property="og:image" content={blogContent.imageUrl} />
+        <meta property="og:url" content={`https://www.qxtech.com.au/blog/${blogContent.slug}`} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+      
       <Navbar />
       <NarrowBanner
           imageUrl="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

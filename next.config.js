@@ -46,4 +46,9 @@ const nextConfig = {
   },
 };
 
+// next.config.js
+// module.exports = {
+//   compress: true, // 默认启用
+// };
+
 module.exports = nextConfig;
